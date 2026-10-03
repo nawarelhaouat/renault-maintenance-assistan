@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: gmao_db
+    environment:
+      POSTGRES_USER: gmao
+      POSTGRES_PASSWORD: gmao
+      POSTGRES_DB: gmao
+    ports:
+      - "5432:5432"
+    volumes:
+      - gmao_data:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+
+volumes:
+  gmao_data:
