@@ -1,0 +1,7 @@
+pymupdf
+sentence-transformers
+qdrant-client
+ollama
+streamlit
+psycopg2-binary
+reportlab

@@ -11,6 +11,14 @@ services:
     volumes:
       - gmao_data:/var/lib/postgresql/data
       - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
-
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: gmao_qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+      
 volumes:
   gmao_data:
+  qdrant_data:
