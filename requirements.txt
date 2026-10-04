@@ -14,3 +14,8 @@ qrcode[pil]
 pillow
 numpy
 rank-bm25
+pandas
+scikit-learn
+xgboost
+mlflow
+joblib

@@ -10,6 +10,7 @@ from app.nlp.language import normalize_query
 from app.tools.combined import diagnose_failure
 from app.tools.machine_db import get_failure_stats, get_machine_info, get_maintenance_history
 from app.tools.rag_search import search_manuals
+from app.ml.predict import risk_report
 
 TOOLS = [get_machine_info, get_maintenance_history, get_failure_stats, search_manuals]
 
@@ -29,6 +30,8 @@ LAST_RE = re.compile(r"derni(?:er|ère|ere)s?\s+(?:panne|d[eé]faillance|inciden
 HISTORY_RE = re.compile(r"historique|derni[eè]res?\s+interventions?|interventions?\s+r[eé]centes?", re.I)
 STATS_RE = re.compile(r"pannes?\s+(?:les\s+)?plus\s+fr[eé]quentes?|statistiques?\s+(?:de|des)\s+pannes?|top\s+pannes", re.I)
 COUNT_RE = re.compile(r"combien|nombre|total|how\s+many", re.I)
+RISK_RE = re.compile(r"risque\s+de\s+panne|probabilit[eé]\s+de\s+panne|prochaine\s+panne|tomber\s+en\s+panne|"
+                     r"pr[eé]diction|pr[eé]dire|failure\s+risk", re.I)
 TOPIC_RE = re.compile(r"intervention|maintenance|fois|panne|corrective|pr[eé]ventive|arr[eê]t|mttr", re.I)
 NEED_MACHINE = "Sélectionne ou identifie d'abord une machine."
 
@@ -41,6 +44,8 @@ def _intents(text: str) -> list[str]:
         out.append("history")
     if STATS_RE.search(text):
         out.append("stats")
+    if RISK_RE.search(text):
+        out.append("risk")
     if COUNT_RE.search(text) and TOPIC_RE.search(text) and not STATS_RE.search(text):
         out.append("count")
     return out
@@ -100,6 +105,8 @@ def run(question: str, asset_tag: str | None = None, history: list[tuple[str, st
         if it == "stats":
             args = {"asset_tag": asset_tag}
             return done(_fmt_stats(get_failure_stats.invoke(args)), "get_failure_stats", args)
+        if it == "risk":
+            return done(risk_report(asset_tag), "predict_failure_risk", {"asset_tag": asset_tag})        
         return done(_fmt_count(asset_tag), "machine_summary", {"asset_tag": asset_tag})
 
     # 2) Aucune intention SQL : toujours le manuel (jamais de réponse libre du LLM)

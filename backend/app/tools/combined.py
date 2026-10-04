@@ -89,6 +89,12 @@ def _cause(kept: list[str], context: str) -> str:
         return f"**Cause probable** : Code {best.group(1)} : {best.group(2)}"
     return ""
 
+def _strip_common_prefix(steps: list[str]) -> list[str]:
+    """Retire un préfixe 'Xxx : ' répété sur toutes les étapes (ajouté par le LLM)."""
+    if len(steps) >= 2 and all(" : " in s for s in steps):
+        if len({s.split(" : ", 1)[0] for s in steps}) == 1:
+            return [s.split(" : ", 1)[1] for s in steps]
+    return steps
 
 def build_answer(raw: str, context: str, docs: list[dict], safety: bool = True,
                  with_cause: bool = True, threshold: float = 0.75):
@@ -108,6 +114,7 @@ def build_answer(raw: str, context: str, docs: list[dict], safety: bool = True,
     if not kept:
         return None
 
+    kept = _strip_common_prefix(kept)
     parts = []
     cause = _cause(kept, context) if with_cause else ""
     if cause:
