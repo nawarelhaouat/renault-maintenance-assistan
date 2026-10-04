@@ -1,5 +1,5 @@
 import uuid
-
+import re
 import fitz  # PyMuPDF
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
@@ -10,7 +10,7 @@ from app.config import (CHUNK_OVERLAP, CHUNK_SIZE, COLLECTION, EMBED_DIM,
 
 
 def chunk_text(text: str):
-    text = " ".join(text.split())
+    text = re.sub(r"Code(?=E\d{3})", "Code ", " ".join(text.split()))
     step = CHUNK_SIZE - CHUNK_OVERLAP
     return [text[i:i + CHUNK_SIZE] for i in range(0, len(text), step) if text[i:i + CHUNK_SIZE].strip()]
 

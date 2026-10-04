@@ -87,6 +87,14 @@ ERRORS = {
 styles = getSampleStyleSheet()
 H1, H2, P = styles["Title"], styles["Heading2"], styles["BodyText"]
 
+CAT_FAILURES = {
+    "Robot": ["E101", "E102", "E202", "E401", "E501", "E601"],
+    "Robot peinture": ["E101", "E102", "E202", "E301", "E402", "E501"],
+    "Presse": ["E201", "E202", "E402", "E501", "E601"],
+    "Visseuse": ["E302", "E402", "E501"],
+    "Automate": ["E301", "E402", "E501"],
+}
+
 
 def build(manufacturer, model, category, filename):
     doc = SimpleDocTemplate(str(OUT / filename), pagesize=A4, title=f"{manufacturer} {model}")
@@ -104,7 +112,7 @@ def build(manufacturer, model, category, filename):
     s += [Paragraph("3. Maintenance préventive", H2)]
     s += [Paragraph(x, P) for x in PREVENTIVE[category]] + [PageBreak()]
 
-    codes = list(ERRORS)
+    codes = [c for c in ERRORS if c in CAT_FAILURES[category]]
     s += [Paragraph("4. Codes d'erreur et dépannage", H2)]
     for i, code in enumerate(codes):
         title, symptom, steps = ERRORS[code]
@@ -112,7 +120,7 @@ def build(manufacturer, model, category, filename):
               Paragraph(f"Symptôme : {symptom}", P)]
         s += [Paragraph(f"Étape {n}. {t}", P) for n, t in enumerate(steps, 1)]
         s.append(Spacer(1, 8))
-        if i == 4:
+        if i == 2:
             s.append(PageBreak())
     doc.build(s)
     print("OK", filename)

@@ -13,3 +13,9 @@ LLM_MODEL = "qwen2.5:7b"      # via Ollama
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 150
 TOP_K = 5
+
+RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"   # multilingue, ~2 Go au premier téléchargement
+N_CANDIDATES = 20
+RRF_K = 60
+USE_RERANKER = True
+MIN_RERANK_SCORE = -4.0   # valeur de départ, à calibrer 

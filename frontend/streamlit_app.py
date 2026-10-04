@@ -75,7 +75,9 @@ if tag:
 
 if "history" not in st.session_state:
     st.session_state.history = []
-
+if st.session_state.get("last_tag") != tag:   # nouvelle machine = nouvelle conversation
+    st.session_state.history = []
+    st.session_state.last_tag = tag
 
 def show_trace(trace):
     if trace:
@@ -97,7 +99,9 @@ if q := st.chat_input("Pose ta question (français / darija)..."):
         st.markdown(q)
     with st.chat_message("assistant"):
         with st.spinner("L'agent réfléchit..."):
-            text, trace = run(q, tag, past)
+            text, trace, nq = run(q, tag, past)
+        if nq["lang"] != "fr":
+            st.caption(f"🌐 Langue détectée : {nq['lang']} → compris comme : « {nq['french']} »")
         st.markdown(text)
         show_trace(trace)
     st.session_state.history.append(("assistant", text, trace))

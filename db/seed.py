@@ -33,8 +33,15 @@ FAILURES = [
     ("E301", "Défaut de communication réseau (Profinet)", 2),
     ("E302", "Erreur de couple de serrage", 1), ("E401", "Usure réducteur", 3),
     ("E402", "Défaut capteur de proximité", 1), ("E501", "Arrêt d'urgence déclenché", 2),
-    ("E601", "Défaut de graissage", 1),
+    ("E601", "Défaut de graissage", 1),  
 ]
+CAT_FAILURES = {
+    "Robot": ["E101", "E102", "E202", "E401", "E501", "E601"],
+    "Robot peinture": ["E101", "E102", "E202", "E301", "E402", "E501"],
+    "Presse": ["E201", "E202", "E402", "E501", "E601"],
+    "Visseuse": ["E302", "E402", "E501"],
+    "Automate": ["E301", "E402", "E501"],
+}
 TECHS = [
     ("Youssef Benali", "Mécanique"), ("Karim El Idrissi", "Électrique"),
     ("Samir Ouazzani", "Automatisme"), ("Hamza Tazi", "Hydraulique"),
@@ -93,15 +100,18 @@ for _ in range(60):
         random.choices(["running", "maintenance", "stopped"], [85, 10, 5])[0],
         random.choice([1, 2, 3]),
     ))
+
 execute_values(cur, """INSERT INTO machines(asset_tag, serial_number, model_id, line_id,
-    install_date, status, criticality) VALUES %s RETURNING machine_id, install_date""", machines_rows)
+    install_date, status, criticality) VALUES %s""", machines_rows)
+cur.execute("""SELECT m.machine_id, m.install_date, mm.category FROM machines m
+               JOIN machine_models mm USING (model_id)""")
 machines = cur.fetchall()
 
 # Ordres de travail
 NOW = datetime(2026, 10, 1)
 START = datetime(2022, 1, 1)
 wo_rows = []
-for mid, inst in machines:
+for mid, inst, cat in machines:
     t0 = max(START, datetime.combine(inst, datetime.min.time()))
     span = (NOW - t0).days
     for _ in range(random.randint(8, 45)):
@@ -111,7 +121,7 @@ for mid, inst in machines:
         corrective = wo_type == "corrective"
         downtime = random.randint(30, 480) if corrective else random.randint(10, 90)
         wo_rows.append((
-            mid, wo_type, random.choice(FAILURES)[0] if corrective else None,
+            mid, wo_type, random.choice(CAT_FAILURES[cat]) if corrective else None,
             random.choice(DESC[wo_type]), opened, opened + timedelta(minutes=downtime + 20),
             random.choice(tech_ids), downtime, "closed", 0,
         ))

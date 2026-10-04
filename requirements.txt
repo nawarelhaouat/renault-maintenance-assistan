@@ -13,3 +13,4 @@ easyocr
 qrcode[pil]
 pillow
 numpy
+rank-bm25
