@@ -11,6 +11,11 @@ services:
     volumes:
       - gmao_data:/var/lib/postgresql/data
       - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gmao -d gmao"]
+      interval: 5s
+      retries: 10
+
   qdrant:
     image: qdrant/qdrant:latest
     container_name: gmao_qdrant
@@ -18,7 +23,76 @@ services:
       - "6333:6333"
     volumes:
       - qdrant_data:/qdrant/storage
-      
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: gmao_ollama
+    ports:
+      - "11435:11434"          # 11435 côté hôte : évite le conflit avec ton Ollama local
+    volumes:
+      - ollama_data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      retries: 12
+    # GPU NVIDIA (optionnel) :
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  ollama-pull:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama", "pull", "qwen2.5:7b"]
+    restart: "no"
+
+  api:
+    build: .
+    image: gmao-app
+    container_name: gmao_api
+    ports:
+      - "8000:8000"
+    environment: &app_env
+      DATABASE_URL: postgresql://gmao:gmao@db:5432/gmao
+      QDRANT_URL: http://qdrant:6333
+      OLLAMA_HOST: http://ollama:11434
+      API_KEY: ${API_KEY:-}
+      WARMUP: "1"
+    volumes: &app_vol
+      - ./data:/app/data
+      - ./models:/app/models
+      - hf_cache:/root/.cache/huggingface
+      - easyocr_cache:/root/.EasyOCR
+    depends_on:
+      db:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      ollama:
+        condition: service_healthy
+
+  ui:
+    image: gmao-app
+    container_name: gmao_ui
+    command: streamlit run frontend/streamlit_app.py --server.address 0.0.0.0 --server.port 8501
+    ports:
+      - "8501:8501"
+    environment: *app_env
+    volumes: *app_vol
+    depends_on:
+      - api
+
 volumes:
   gmao_data:
   qdrant_data:
+  ollama_data:
+  hf_cache:
+  easyocr_cache:

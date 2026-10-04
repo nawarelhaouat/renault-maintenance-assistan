@@ -1,13 +1,12 @@
 import re
 
 import ollama
-from langchain_core.runnables import RunnableConfig
-from langchain_core.tools import tool
-
 from app.config import LLM_MODEL
 from app.db import query
 from app.rag.retriever import search, tokenize
 from app.tools.machine_db import resolve_tag
+from langchain_core.runnables import RunnableConfig
+from langchain_core.tools import tool
 
 NOT_FOUND = "Procédure introuvable dans le manuel."
 SAFETY_LINE = "**Sécurité** : consigner la machine (LOTO) avant toute intervention."
@@ -33,8 +32,8 @@ Format :
 2. <étape>
 Réponds uniquement : {NOT_FOUND} si aucune section des extraits n'a de rapport avec la question."""
 
-STEP_RE = re.compile(r"^\s*(?:[-*]\s*)?(?:étape\s*)?(\d+)[.)]\s+(.*\S)\s*$", re.I)
-SECTION_RE = re.compile(r"Code\s*(E\d{3})\s*:\s*(.+?)\s*Sympt[oô]me", re.S)
+STEP_RE = re.compile(r"^\s*(?:[-*]\s*)?(?:étape\s*)?(\d+)[.)]\s+(.*\S)\s*$", re.IGNORECASE)
+SECTION_RE = re.compile(r"Code\s*(E\d{3})\s*:\s*(.+?)\s*Sympt[oô]me", re.DOTALL)
 
 
 def code_pat(code: str) -> re.Pattern:
@@ -131,7 +130,7 @@ def build_answer(raw: str, context: str, docs: list[dict], safety: bool = True,
 def footer(docs: list[dict], context: str, built: str, code: str | None = None) -> str:
     refs = set(re.findall(r"RF-[A-Z]+-\d+", built))
     if code:
-        seg = re.search(rf"Code\s*{code}\s*:.*?(?=Code\s*E\d{{3}}\s*:|$)", context.replace("\n", " "), re.S)
+        seg = re.search(rf"Code\s*{code}\s*:.*?(?=Code\s*E\d{{3}}\s*:|$)", context.replace("\n", " "), re.DOTALL)
         refs |= set(re.findall(r"RF-[A-Z]+-\d+", seg.group(0) if seg else ""))
     out = ""
     if refs:

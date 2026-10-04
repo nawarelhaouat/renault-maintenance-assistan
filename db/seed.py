@@ -81,8 +81,10 @@ models = cur.fetchall()
 execute_values(cur, "INSERT INTO failure_codes(code, description, severity) VALUES %s", FAILURES)
 execute_values(cur, "INSERT INTO technicians(full_name, specialty) VALUES %s", TECHS)
 execute_values(cur, "INSERT INTO spare_parts(reference, name, stock_qty, unit_cost_mad) VALUES %s", PARTS)
-cur.execute("SELECT technician_id FROM technicians"); tech_ids = [r[0] for r in cur.fetchall()]
-cur.execute("SELECT part_id, unit_cost_mad FROM spare_parts"); parts = cur.fetchall()
+cur.execute("SELECT technician_id FROM technicians")
+tech_ids = [r[0] for r in cur.fetchall()]
+cur.execute("SELECT part_id, unit_cost_mad FROM spare_parts")
+parts = cur.fetchall()
 
 plan_rows = [(mid, task, freq) for mid, cat in models for task, freq in PLANS[cat]]
 execute_values(cur, "INSERT INTO maintenance_plans(model_id, task, frequency_days) VALUES %s", plan_rows)
@@ -143,5 +145,6 @@ cur.execute("""UPDATE work_orders w SET cost_mad =
               JOIN spare_parts p USING (part_id) WHERE wp.wo_id = w.wo_id), 0) + 300""")
 
 conn.commit()
-cur.close(); conn.close()
+cur.close()
+conn.close()
 print(f"OK: {len(machines)} machines, {len(wos)} ordres de travail")

@@ -3,11 +3,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "backend"))
 
-from app.config import MIN_RERANK_SCORE, USE_RERANKER  # noqa: E402
-from app.nlp.language import normalize_query  # noqa: E402
-from app.rag.retriever import search  # noqa: E402
-from app.tools.combined import PROMPT_SYMPTOM, generate  # noqa: E402
-from app.tools.rag_search import SYMPTOM  # noqa: E402
+from app.config import MIN_RERANK_SCORE, USE_RERANKER
+from app.nlp.language import normalize_query
+from app.rag.retriever import search
+from app.tools.combined import PROMPT_SYMPTOM, generate
+from app.tools.rag_search import SYMPTOM
 
 q = normalize_query(sys.argv[1])["french"]
 qs = f"{q} code d'erreur dépannage" if SYMPTOM.search(q) else q

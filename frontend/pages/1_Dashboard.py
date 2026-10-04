@@ -5,7 +5,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "backend"))
 
 import pandas as pd
 import streamlit as st
-
 from app.db import query
 from app.ml.predict import score_fleet
 

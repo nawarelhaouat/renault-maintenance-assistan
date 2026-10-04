@@ -1,9 +1,8 @@
 import json
 
+from app.db import query
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import tool
-
-from app.db import query
 
 
 def _dump(x) -> str:

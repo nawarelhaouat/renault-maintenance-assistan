@@ -2,7 +2,6 @@ import json
 import re
 
 import ollama
-
 from app.config import LLM_MODEL
 
 ARABIC = re.compile(r"[\u0600-\u06FF]")

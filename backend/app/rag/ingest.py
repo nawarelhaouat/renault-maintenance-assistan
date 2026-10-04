@@ -1,12 +1,11 @@
-import uuid
 import re
+import uuid
+
 import fitz  # PyMuPDF
+from app.config import CHUNK_OVERLAP, CHUNK_SIZE, COLLECTION, EMBED_DIM, EMBED_MODEL, MANUALS_DIR, QDRANT_URL
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 from sentence_transformers import SentenceTransformer
-
-from app.config import (CHUNK_OVERLAP, CHUNK_SIZE, COLLECTION, EMBED_DIM,
-                        EMBED_MODEL, MANUALS_DIR, QDRANT_URL)
 
 
 def chunk_text(text: str):

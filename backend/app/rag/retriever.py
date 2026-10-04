@@ -2,20 +2,23 @@ import re
 import unicodedata
 from functools import lru_cache
 
+from app.config import COLLECTION, EMBED_MODEL, N_CANDIDATES, QDRANT_URL, RERANKER_MODEL, RRF_K, TOP_K, USE_RERANKER
 from qdrant_client import QdrantClient
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 from rank_bm25 import BM25Okapi
-import torch
-from sentence_transformers import SentenceTransformer
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
-
-from app.config import (COLLECTION, EMBED_MODEL, N_CANDIDATES, QDRANT_URL,
-                        RERANKER_MODEL, RRF_K, TOP_K, USE_RERANKER)
-
-_client = QdrantClient(url=QDRANT_URL)
-_embedder = SentenceTransformer(EMBED_MODEL, device="cpu")
 
 _TOKEN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+
+
+@lru_cache(maxsize=1)
+def _client():
+    return QdrantClient(url=QDRANT_URL)
+
+
+@lru_cache(maxsize=1)
+def _embedder():
+    from sentence_transformers import SentenceTransformer
+    return SentenceTransformer(EMBED_MODEL, device="cpu")
 
 
 def tokenize(text: str) -> list[str]:
@@ -34,8 +37,8 @@ def _key(d: dict) -> int:
 def _corpus():
     chunks, offset = [], None
     while True:
-        points, offset = _client.scroll(COLLECTION, limit=500, offset=offset,
-                                        with_payload=True, with_vectors=False)
+        points, offset = _client().scroll(COLLECTION, limit=500, offset=offset,
+                                          with_payload=True, with_vectors=False)
         chunks += [{"text": p.payload["text"], "source": p.payload["source"],
                     "page": p.payload["page"]} for p in points]
         if offset is None:
@@ -44,9 +47,9 @@ def _corpus():
 
 
 def _dense(query: str, source: str | None, n: int) -> list[dict]:
-    vec = _embedder.encode(query, normalize_embeddings=True).tolist()
+    vec = _embedder().encode(query, normalize_embeddings=True).tolist()
     flt = Filter(must=[FieldCondition(key="source", match=MatchValue(value=source))]) if source else None
-    hits = _client.query_points(COLLECTION, query=vec, limit=n, query_filter=flt).points
+    hits = _client().query_points(COLLECTION, query=vec, limit=n, query_filter=flt).points
     return [{"text": h.payload["text"], "source": h.payload["source"],
              "page": h.payload["page"], "score": h.score} for h in hits]
 
@@ -78,12 +81,14 @@ def _rrf(*rankings: list[dict]) -> list[dict]:
 
 @lru_cache(maxsize=1)
 def _reranker():
+    from transformers import AutoModelForSequenceClassification, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(RERANKER_MODEL)
     model = AutoModelForSequenceClassification.from_pretrained(RERANKER_MODEL).eval()
     return tok, model
 
 
 def _rerank(query: str, docs: list[dict], k: int) -> list[dict]:
+    import torch
     if not docs:
         return docs
     tok, model = _reranker()

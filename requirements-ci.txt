@@ -1,0 +1,12 @@
+pytest
+ruff
+httpx
+fastapi
+python-multipart
+numpy
+pandas
+psycopg2-binary
+ollama
+rank-bm25
+qdrant-client
+langchain-core<1.0

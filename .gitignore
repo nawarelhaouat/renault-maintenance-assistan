@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets et configuration locale
+.env
+.streamlit/secrets.toml
+
+# MLflow
+mlflow.db
+mlruns/
+
+# Modèles entraînés (régénérés par ml/train.py)
+models/*.joblib
+models/metrics.json
+
+# Données générées ou confidentielles
+data/photos/
+data/manuals/*.pdf
+data/private/
+
+# IDE et OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

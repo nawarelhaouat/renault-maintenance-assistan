@@ -1,16 +1,15 @@
 import json
 import re
 
-from langchain_ollama import ChatOllama
-from langgraph.prebuilt import create_react_agent
-
 from app.config import LLM_MODEL
 from app.db import query
+from app.ml.predict import risk_report
 from app.nlp.language import normalize_query
 from app.tools.combined import diagnose_failure
 from app.tools.machine_db import get_failure_stats, get_machine_info, get_maintenance_history
 from app.tools.rag_search import search_manuals
-from app.ml.predict import risk_report
+from langchain_ollama import ChatOllama
+from langgraph.prebuilt import create_react_agent
 
 TOOLS = [get_machine_info, get_maintenance_history, get_failure_stats, search_manuals]
 
@@ -25,14 +24,14 @@ Règles strictes :
 llm = ChatOllama(model=LLM_MODEL, temperature=0, num_ctx=4096, keep_alive="30m")
 agent = create_react_agent(llm, TOOLS, prompt=SYSTEM)   # utilisé seulement pour les questions multi-intentions
 
-CODE_RE = re.compile(r"\bE\d{3}\b", re.I)
-LAST_RE = re.compile(r"derni(?:er|ère|ere)s?\s+(?:panne|d[eé]faillance|incident)|last\s+failure", re.I)
-HISTORY_RE = re.compile(r"historique|derni[eè]res?\s+interventions?|interventions?\s+r[eé]centes?", re.I)
-STATS_RE = re.compile(r"pannes?\s+(?:les\s+)?plus\s+fr[eé]quentes?|statistiques?\s+(?:de|des)\s+pannes?|top\s+pannes", re.I)
-COUNT_RE = re.compile(r"combien|nombre|total|how\s+many", re.I)
+CODE_RE = re.compile(r"\bE\d{3}\b", re.IGNORECASE)
+LAST_RE = re.compile(r"derni(?:er|ère|ere)s?\s+(?:panne|d[eé]faillance|incident)|last\s+failure", re.IGNORECASE)
+HISTORY_RE = re.compile(r"historique|derni[eè]res?\s+interventions?|interventions?\s+r[eé]centes?", re.IGNORECASE)
+STATS_RE = re.compile(r"pannes?\s+(?:les\s+)?plus\s+fr[eé]quentes?|statistiques?\s+(?:de|des)\s+pannes?|top\s+pannes", re.IGNORECASE)
+COUNT_RE = re.compile(r"combien|nombre|total|how\s+many", re.IGNORECASE)
 RISK_RE = re.compile(r"risque\s+de\s+panne|probabilit[eé]\s+de\s+panne|prochaine\s+panne|tomber\s+en\s+panne|"
-                     r"pr[eé]diction|pr[eé]dire|failure\s+risk", re.I)
-TOPIC_RE = re.compile(r"intervention|maintenance|fois|panne|corrective|pr[eé]ventive|arr[eê]t|mttr", re.I)
+                     r"pr[eé]diction|pr[eé]dire|failure\s+risk", re.IGNORECASE)
+TOPIC_RE = re.compile(r"intervention|maintenance|fois|panne|corrective|pr[eé]ventive|arr[eê]t|mttr", re.IGNORECASE)
 NEED_MACHINE = "Sélectionne ou identifie d'abord une machine."
 
 

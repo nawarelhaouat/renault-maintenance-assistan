@@ -1,0 +1,130 @@
+[
+  {
+    "group": "procédure",
+    "machine": "TNG-PLC-0001",
+    "question": "Que faire en cas de E301 ?",
+    "ok": true,
+    "seconds": 128.7,
+    "answer": "### Panne E301 : Défaut de communication réseau (Profinet)\n- Sur TNG-PLC-0001 : 2 occurrence(s), arrêt moyen 266 min\n\n**Étapes**\n\n1. Vérifier les voyants LINK/ACT du port réseau. [siemens_s7_1500.pdf, p.4]\n2. Contrôler le câble Profinet et le remplacer si besoin (réf. RF-CAB-330). [siemens_s7_1500.pdf, p.4]\n3. Vérifier le nom de station et l'adresse IP de l'appareil. [siemens_s7_1500.pdf, p.4]\n4. Redémarrer le switch puis la machine. Si le défaut revient, contacter l'automaticien. [siemens_s7_1500.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-CAB-330 · Câble Profinet · stock : 30 · 210 MAD\n\n*Sources : siemens_s7_1500.pdf p.4*"
+  },
+  {
+    "group": "procédure",
+    "machine": "TNG-PRS-0001",
+    "question": "Que faire en cas de E201 ?",
+    "ok": true,
+    "seconds": 74.5,
+    "answer": "### Panne E201 : Fuite hydraulique\n- Sur TNG-PRS-0001 : 6 occurrence(s), arrêt moyen 429 min\n\n**Étapes**\n\n1. Arrêter la machine et purger la pression résiduelle. [schuler_msp2000.pdf, p.4]\n2. Repérer la fuite : raccords, flexibles, joints de vérin. [schuler_msp2000.pdf, p.4]\n3. Remplacer le joint ou le flexible concerné (kit réf. RF-JNT-310). [schuler_msp2000.pdf, p.4]\n4. Compléter le niveau d'huile et remplacer le filtre (réf. RF-FIL-050). Tester la montée en pression. [schuler_msp2000.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-FIL-050 · Filtre hydraulique · stock : 20 · 390 MAD\n- RF-JNT-310 · Kit joints hydrauliques · stock : 25 · 450 MAD\n\n*Sources : schuler_msp2000.pdf p.4*"
+  },
+  {
+    "group": "symptôme",
+    "machine": "TNG-PRS-0001",
+    "question": "La presse a une fuite d'huile, que faire ?",
+    "ok": true,
+    "seconds": 86.1,
+    "answer": "**Cause probable** : Code E201 : Fuite hydraulique\n\n**Étapes**\n\n1. Arrêter la machine et purger la pression résiduelle. [schuler_msp2000.pdf, p.4]\n2. Repérer la fuite : raccords, flexibles, joints de vérin. [schuler_msp2000.pdf, p.4]\n3. Remplacer le joint ou le flexible concerné (kit réf. RF-JNT-310). [schuler_msp2000.pdf, p.4]\n4. Compléter le niveau d'huile et remplacer le filtre (réf. RF-FIL-050). Tester la montée en pression. [schuler_msp2000.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-FIL-050 · Filtre hydraulique · stock : 20 · 390 MAD\n- RF-JNT-310 · Kit joints hydrauliques · stock : 25 · 450 MAD\n\n*Sources : schuler_msp2000.pdf p.4*"
+  },
+  {
+    "group": "symptôme",
+    "machine": "TNG-VIS-0001",
+    "question": "Le couple de serrage est hors tolérance",
+    "ok": true,
+    "seconds": 66.1,
+    "answer": "**Cause probable** : Code E302 : Erreur de couple de serrage\n\n**Étapes**\n\n1. Arrêter la production sur ce poste et isoler les pièces concernées. [atlas_tensor_str.pdf, p.4]\n2. Vérifier l'outil sur le banc d'étalonnage. [atlas_tensor_str.pdf, p.4]\n3. Contrôler l'usure de l'embout et l'état du câble. [atlas_tensor_str.pdf, p.4]\n4. Réétalonner l'outil. Si l'écart persiste, envoyer la visseuse en réparation. [atlas_tensor_str.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n*Sources : atlas_tensor_str.pdf p.4*"
+  },
+  {
+    "group": "préventif",
+    "machine": "TNG-ROB-0001",
+    "question": "Quand graisser les axes ?",
+    "ok": true,
+    "seconds": 61.5,
+    "answer": "**Étapes**\n\n1. Graissage des axes 1 à 6 : tous les 90 jours (ou 4000 heures). Graisse au lithium NLGI 2, environ 30 g par axe. Nettoyer les graisseurs avant injection. [kuka_kr210.pdf, p.3]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n*Sources : kuka_kr210.pdf p.3*"
+  },
+  {
+    "group": "préventif",
+    "machine": "TNG-VIS-0001",
+    "question": "À quelle fréquence étalonner la visseuse ?",
+    "ok": true,
+    "seconds": 44.7,
+    "answer": "Je n'ai pas pu formuler une procédure fiable. Extraits les plus proches du manuel :\n\n> [atlas_tensor_str.pdf, p.3] 3. Maintenance préventive Étalonnage du couple : tous les 30 jours à l'aide d'un banc d'essai. Tolérance admise : plus ou moins 5 pour cent. Hors tolérance : retirer la visseuse de la ligne et contacter la maintenance. Contrôle du câble et du connecteur : mensuel. Remplacer tout câble endommagé.\n\n> [atlas_tensor_str.pdf, p.1] Atlas Copco Tensor STR Manuel de maintenance Document de démonstration généré à des fins de test. Ne pas utiliser en production. 1. Présentation et caractéristiques Visseuse de précision à contrôle de couple pour lignes de montage. Plage de couple : 5 à 50 Nm. Précision : plus ou moins 5 pour cent. Alimentation : 230 V."
+  },
+  {
+    "group": "darija",
+    "machine": "TNG-PLC-0001",
+    "question": "kayn mochkil f réseau Profinet, achno ndir ?",
+    "ok": true,
+    "seconds": 133.7,
+    "answer": "**Cause probable** : Code E301 : Défaut de communication Profinet\n\n**Étapes**\n\n1. Vérifier les voyants LINK/ACT du port réseau. [siemens_s7_1500.pdf, p.4]\n2. Contrôler le câble Profinet et le remplacer si besoin (réf. RF-CAB-330). [siemens_s7_1500.pdf, p.4]\n3. Vérifier le nom de station et l'adresse IP de l'appareil. [siemens_s7_1500.pdf, p.4]\n4. Redémarrer le switch puis la machine. Si le défaut revient, contacter l'automaticien. [siemens_s7_1500.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-CAB-330 · Câble Profinet · stock : 30 · 210 MAD\n\n*Sources : siemens_s7_1500.pdf p.4*"
+  },
+  {
+    "group": "darija",
+    "machine": "TNG-PRS-0001",
+    "question": "kayn tsrib dyal zit f la presse, achno ndir ?",
+    "ok": true,
+    "seconds": 197.7,
+    "answer": "**Cause probable** : Code E201 : Fuite hydraulique\n\n**Étapes**\n\n1. Code E201 : Fuite hydraulique Symptôme : Perte de pression, traces d'huile sous la machine. [schuler_msp2000.pdf, p.4]\n2. Étape 1. Arrêter la machine et purger la pression résiduelle. [schuler_msp2000.pdf, p.4]\n3. Étape 2. Repérer la fuite : raccords, flexibles, joints de vérin. [schuler_msp2000.pdf, p.4]\n4. Étape 3. Remplacer le joint ou le flexible concerné (kit réf. RF-JNT-310). [schuler_msp2000.pdf, p.4]\n5. Étape 4. Compléter le niveau d'huile et remplacer le filtre (réf. RF-FIL-050). Tester la montée en pression. [schuler_msp2000.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-FIL-050 · Filtre hydraulique · stock : 20 · 390 MAD\n- RF-JNT-310 · Kit joints hydrauliques · stock : 25 · 450 MAD\n\n*Sources : schuler_msp2000.pdf p.4*"
+  },
+  {
+    "group": "darija",
+    "machine": "TNG-ROB-0001",
+    "question": "l moteur skhoun bzaf, achno ndir ?",
+    "ok": true,
+    "seconds": 194.8,
+    "answer": "**Cause probable** : Code E101 : Surchauffe moteur axe\n\n**Étapes**\n\n1. Arrêter la machine et laisser refroidir 30 minutes. [kuka_kr210.pdf, p.4]\n2. Vérifier le ventilateur du moteur et dégager les entrées d'air. [kuka_kr210.pdf, p.4]\n3. Contrôler la charge et la trajectoire du programme : cycle trop dense ? [kuka_kr210.pdf, p.4]\n4. Mesurer la résistance de la sonde thermique. Si défectueuse, remplacer le moteur (réf. RF-MOT-210). [kuka_kr210.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-MOT-210 · Moteur axe 3 · stock : 4 · 18 500 MAD\n\n*Sources : kuka_kr210.pdf p.4*"
+  },
+  {
+    "group": "darija (arabe)",
+    "machine": "TNG-PLC-0001",
+    "question": "كيفاش نصلح مشكل Profinet؟",
+    "ok": true,
+    "seconds": 159.1,
+    "answer": "**Cause probable** : Code E301 : Défaut de communication Profinet\n\n**Étapes**\n\n1. Vérifier les voyants LINK/ACT du port réseau. [siemens_s7_1500.pdf, p.4]\n2. Contrôler le câble Profinet et le remplacer si besoin (réf. RF-CAB-330). [siemens_s7_1500.pdf, p.4]\n3. Vérifier le nom de station et l'adresse IP de l'appareil. [siemens_s7_1500.pdf, p.4]\n4. Redémarrer le switch puis la machine. Si le défaut revient, contacter l'automaticien. [siemens_s7_1500.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-CAB-330 · Câble Profinet · stock : 30 · 210 MAD\n\n*Sources : siemens_s7_1500.pdf p.4*"
+  },
+  {
+    "group": "refus",
+    "machine": "TNG-PLC-0001",
+    "question": "Quand graisser ?",
+    "ok": true,
+    "seconds": 8.2,
+    "answer": "Procédure introuvable dans le manuel. (manuel consulté : siemens_s7_1500.pdf)"
+  },
+  {
+    "group": "refus",
+    "machine": "TNG-PLC-0001",
+    "question": "Quelle est la recette du couscous ?",
+    "ok": true,
+    "seconds": 8.3,
+    "answer": "Procédure introuvable dans le manuel. (manuel consulté : siemens_s7_1500.pdf)"
+  },
+  {
+    "group": "refus",
+    "machine": "TNG-VIS-0001",
+    "question": "Comment changer un pneu de voiture ?",
+    "ok": true,
+    "seconds": 8.7,
+    "answer": "Procédure introuvable dans le manuel. (manuel consulté : atlas_tensor_str.pdf)"
+  },
+  {
+    "group": "SQL",
+    "machine": "TNG-PLC-0001",
+    "question": "Combien de fois cette machine a eu une maintenance ?",
+    "ok": true,
+    "seconds": 0.1,
+    "answer": "**TNG-PLC-0001** : 27 interventions au total (4 correctives, 9 préventives), arrêt cumulé 23.5 h, MTTR 177.5 min, dernière intervention le 2026-09-25."
+  },
+  {
+    "group": "SQL",
+    "machine": "TNG-PLC-0001",
+    "question": "Quelle est sa dernière panne et comment la résoudre ?",
+    "ok": true,
+    "seconds": 73.6,
+    "answer": "### Panne E301 : Défaut de communication réseau (Profinet)\n- Dernière occurrence : 2024-08-27 · arrêt 281 min · technicien : Samir Ouazzani\n- Sur TNG-PLC-0001 : 2 occurrence(s), arrêt moyen 266 min\n\n**Étapes**\n\n1. Vérifier les voyants LINK/ACT du port réseau. [siemens_s7_1500.pdf, p.4]\n2. Contrôler le câble Profinet et le remplacer si besoin (réf. RF-CAB-330). [siemens_s7_1500.pdf, p.4]\n3. Vérifier le nom de station et l'adresse IP de l'appareil. [siemens_s7_1500.pdf, p.4]\n4. Redémarrer le switch puis la machine. Si le défaut revient, contacter l'automaticien. [siemens_s7_1500.pdf, p.4]\n\n**Sécurité** : consigner la machine (LOTO) avant toute intervention.\n\n**Pièces citées dans le manuel (stock GMAO)**\n- RF-CAB-330 · Câble Profinet · stock : 30 · 210 MAD\n\n*Sources : siemens_s7_1500.pdf p.4*"
+  },
+  {
+    "group": "prédiction",
+    "machine": "TNG-PLC-0001",
+    "question": "Quel est le risque de panne de cette machine ?",
+    "ok": true,
+    "seconds": 1.5,
+    "answer": "**TNG-PLC-0001** : risque estimé de panne dans les 30 jours : **9%** (niveau Faible, rang 58/60 du parc).\n*Données arrêtées au 2026-10-01. Modèle entraîné sur historique synthétique.*\n\n**Facteurs qui augmentent le risque** : jours depuis la dernière panne = 365; pannes sur 90 j = 0"
+  }
+]

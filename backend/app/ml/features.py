@@ -1,5 +1,4 @@
 import numpy as np
-
 from app.db import query
 
 CATS = ["Robot", "Presse", "Visseuse", "Automate", "Robot peinture"]

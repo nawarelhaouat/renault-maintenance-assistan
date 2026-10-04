@@ -11,7 +11,7 @@ from xgboost import XGBClassifier
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
-from app.ml.features import EMPTY, FEATURES, as_of_date, feats, index_events, load_machines  # noqa: E402
+from app.ml.features import EMPTY, FEATURES, as_of_date, feats, index_events, load_machines
 
 PARAMS = dict(n_estimators=250, max_depth=3, learning_rate=0.05, subsample=0.8, colsample_bytree=0.8,
               min_child_weight=5, eval_metric="logloss", random_state=42)

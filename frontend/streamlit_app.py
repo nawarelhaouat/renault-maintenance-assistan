@@ -5,7 +5,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "backend"))
 
 import streamlit as st
-
 from app.agents.graph import run
 from app.db import query
 from app.vision.identify import identify

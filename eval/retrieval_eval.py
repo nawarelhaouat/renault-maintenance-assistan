@@ -3,8 +3,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "backend"))
 
-from app.nlp.language import normalize_query  # noqa: E402
-from app.rag.retriever import search  # noqa: E402
+from app.nlp.language import normalize_query
+from app.rag.retriever import search
 
 # (groupe, question, texte attendu dans un extrait) : recherche SANS filtre de manuel
 CASES = [

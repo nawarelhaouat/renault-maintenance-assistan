@@ -4,7 +4,6 @@ from functools import lru_cache
 
 import cv2
 import numpy as np
-
 from app.db import query
 
 TAG_RE = re.compile(r"TNG-[A-Z]{3}-\d{4}")

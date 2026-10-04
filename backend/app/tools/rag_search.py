@@ -1,16 +1,15 @@
 import re
 
-from langchain_core.runnables import RunnableConfig
-from langchain_core.tools import tool
-
 from app.config import MIN_RERANK_SCORE, USE_RERANKER
 from app.rag.retriever import search
 from app.tools.combined import NOT_FOUND, PROMPT_SYMPTOM, answer_from, manual_of, raw_extracts
 from app.tools.machine_db import resolve_tag
+from langchain_core.runnables import RunnableConfig
+from langchain_core.tools import tool
 
 SYMPTOM = re.compile(
     r"probl[eè]me|panne|d[eé]faut|erreur|ne (?:marche|fonctionne)|fuite|surchauffe|bruit|"
-    r"arr[eê]t|alarme|coup[eé]|perte|r[eé]seau|anormal", re.I)
+    r"arr[eê]t|alarme|coup[eé]|perte|r[eé]seau|anormal", re.IGNORECASE)
 
 
 @tool(return_direct=True)
@@ -28,7 +27,7 @@ def search_manuals(question: str, asset_tag: str = "", config: RunnableConfig = 
     if not docs or (USE_RERANKER and docs[0]["score"] < MIN_RERANK_SCORE):
         return not_found                          # recherche non confiante : pas dans ce manuel
 
-    safety = not re.search(r"consign|loto|s[ée]curit", q, re.I)
+    safety = not re.search(r"consign|loto|s[ée]curit", q, re.IGNORECASE)
     out, status = answer_from(q, docs, PROMPT_SYMPTOM, safety)
     # recherche confiante mais LLM hésitant : on montre le manuel au lieu d'affirmer qu'il n'y a rien
     return out if status == "ok" else raw_extracts(docs)

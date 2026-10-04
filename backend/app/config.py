@@ -1,9 +1,11 @@
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MANUALS_DIR = ROOT / "data" / "manuals"
 
-QDRANT_URL = "http://localhost:6333"
+#QDRANT_URL = "http://localhost:6333"
+QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 COLLECTION = "manuals"
 
 EMBED_MODEL = "BAAI/bge-m3"   # multilingue (FR, EN, AR), dim 1024

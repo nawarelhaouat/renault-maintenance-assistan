@@ -4,7 +4,6 @@ import joblib
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-
 from app.config import ROOT
 from app.ml.features import EMPTY, FEATURES, as_of_date, feats, index_events, load_machines
 
