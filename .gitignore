@@ -23,6 +23,7 @@ models/metrics.json
 data/photos/
 data/manuals/*.pdf
 data/private/
+data/photos_reel
 
 # IDE et OS
 .vscode/
