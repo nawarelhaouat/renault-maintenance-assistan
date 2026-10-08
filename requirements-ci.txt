@@ -10,3 +10,4 @@ ollama
 rank-bm25
 qdrant-client
 langchain-core<1.0
+pyjwt

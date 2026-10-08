@@ -29,3 +29,6 @@ data/private/
 .idea/
 .DS_Store
 Thumbs.db
+
+node_modules/
+web/dist/

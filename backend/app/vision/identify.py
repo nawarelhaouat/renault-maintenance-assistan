@@ -108,6 +108,6 @@ def identify(data: bytes) -> dict:
 
     cat, p = _classify(img)
     cands = query("SELECT asset_tag, manufacturer, model_name, line_name FROM machine_summary "
-                  "WHERE category = %s ORDER BY asset_tag LIMIT 15", (cat,))
+                  "WHERE category = %s ORDER BY asset_tag", (cat,))
     return {"method": "Vision (CLIP, catégorie seulement)", "asset_tag": None, "category": cat,
             "confidence": p, "needs_confirmation": True, "candidates": cands}

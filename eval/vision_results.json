@@ -1,0 +1,1212 @@
+[
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0001_field.jpg",
+    "truth": "TNG-PLC-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0001",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.08
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0002_field.jpg",
+    "truth": "TNG-PLC-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0002",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.08
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0003_field.jpg",
+    "truth": "TNG-PLC-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0003",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0004_field.jpg",
+    "truth": "TNG-PLC-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0004",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0005_field.jpg",
+    "truth": "TNG-PLC-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0005",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0006_field.jpg",
+    "truth": "TNG-PLC-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0006",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0007_field.jpg",
+    "truth": "TNG-PLC-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0007",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0008_field.jpg",
+    "truth": "TNG-PLC-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0008",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0009_field.jpg",
+    "truth": "TNG-PLC-0009",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0009",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PLC-0010_field.jpg",
+    "truth": "TNG-PLC-0010",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0010",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PRS-0001_field.jpg",
+    "truth": "TNG-PRS-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0001",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PRS-0002_field.jpg",
+    "truth": "TNG-PRS-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0002",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PRS-0003_field.jpg",
+    "truth": "TNG-PRS-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0003",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PRS-0004_field.jpg",
+    "truth": "TNG-PRS-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0004",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PRS-0005_field.jpg",
+    "truth": "TNG-PRS-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0005",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-PRS-0006_field.jpg",
+    "truth": "TNG-PRS-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0006",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.08
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0001_field.jpg",
+    "truth": "TNG-ROB-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0001",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0002_field.jpg",
+    "truth": "TNG-ROB-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0002",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.06
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0003_field.jpg",
+    "truth": "TNG-ROB-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0003",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.06
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0004_field.jpg",
+    "truth": "TNG-ROB-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0004",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0005_field.jpg",
+    "truth": "TNG-ROB-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0005",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0006_field.jpg",
+    "truth": "TNG-ROB-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0006",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0007_field.jpg",
+    "truth": "TNG-ROB-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0007",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0008_field.jpg",
+    "truth": "TNG-ROB-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0008",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0009_field.jpg",
+    "truth": "TNG-ROB-0009",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0009",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0010_field.jpg",
+    "truth": "TNG-ROB-0010",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0010",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0011_field.jpg",
+    "truth": "TNG-ROB-0011",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0011",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0012_field.jpg",
+    "truth": "TNG-ROB-0012",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0012",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0013_field.jpg",
+    "truth": "TNG-ROB-0013",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0013",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0014_field.jpg",
+    "truth": "TNG-ROB-0014",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0014",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0015_field.jpg",
+    "truth": "TNG-ROB-0015",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0015",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0016_field.jpg",
+    "truth": "TNG-ROB-0016",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0016",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0017_field.jpg",
+    "truth": "TNG-ROB-0017",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0017",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0018_field.jpg",
+    "truth": "TNG-ROB-0018",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0018",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.06
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0019_field.jpg",
+    "truth": "TNG-ROB-0019",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0019",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0020_field.jpg",
+    "truth": "TNG-ROB-0020",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0020",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0021_field.jpg",
+    "truth": "TNG-ROB-0021",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0021",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0022_field.jpg",
+    "truth": "TNG-ROB-0022",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0022",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.2
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0023_field.jpg",
+    "truth": "TNG-ROB-0023",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0023",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0024_field.jpg",
+    "truth": "TNG-ROB-0024",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0024",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0025_field.jpg",
+    "truth": "TNG-ROB-0025",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0025",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-ROB-0026_field.jpg",
+    "truth": "TNG-ROB-0026",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0026",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0001_field.jpg",
+    "truth": "TNG-RPT-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0001",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0002_field.jpg",
+    "truth": "TNG-RPT-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0002",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.19
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0003_field.jpg",
+    "truth": "TNG-RPT-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0003",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0004_field.jpg",
+    "truth": "TNG-RPT-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0004",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0005_field.jpg",
+    "truth": "TNG-RPT-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0005",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0006_field.jpg",
+    "truth": "TNG-RPT-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0006",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0007_field.jpg",
+    "truth": "TNG-RPT-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0007",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-RPT-0008_field.jpg",
+    "truth": "TNG-RPT-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0008",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0001_field.jpg",
+    "truth": "TNG-VIS-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0001",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0002_field.jpg",
+    "truth": "TNG-VIS-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0002",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0003_field.jpg",
+    "truth": "TNG-VIS-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0003",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0004_field.jpg",
+    "truth": "TNG-VIS-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0004",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0005_field.jpg",
+    "truth": "TNG-VIS-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0005",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0006_field.jpg",
+    "truth": "TNG-VIS-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0006",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0007_field.jpg",
+    "truth": "TNG-VIS-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0007",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0008_field.jpg",
+    "truth": "TNG-VIS-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0008",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.23
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0009_field.jpg",
+    "truth": "TNG-VIS-0009",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0009",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Avec QR code",
+    "file": "TNG-VIS-0010_field.jpg",
+    "truth": "TNG-VIS-0010",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0010",
+    "method": "QR code",
+    "confidence": 0.99,
+    "seconds": 0.07
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0001_noqr.jpg",
+    "truth": "TNG-PLC-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0001",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.83
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0002_noqr.jpg",
+    "truth": "TNG-PLC-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0002",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.66
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0003_noqr.jpg",
+    "truth": "TNG-PLC-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0003",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.18
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0004_noqr.jpg",
+    "truth": "TNG-PLC-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0004",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.11
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0005_noqr.jpg",
+    "truth": "TNG-PLC-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0005",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.97
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0006_noqr.jpg",
+    "truth": "TNG-PLC-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0006",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.13
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0007_noqr.jpg",
+    "truth": "TNG-PLC-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0007",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.13
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0008_noqr.jpg",
+    "truth": "TNG-PLC-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0008",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.49
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0009_noqr.jpg",
+    "truth": "TNG-PLC-0009",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0009",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.49
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PLC-0010_noqr.jpg",
+    "truth": "TNG-PLC-0010",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PLC-0010",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.89
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PRS-0001_noqr.jpg",
+    "truth": "TNG-PRS-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0001",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.01
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PRS-0002_noqr.jpg",
+    "truth": "TNG-PRS-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0002",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.66
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PRS-0003_noqr.jpg",
+    "truth": "TNG-PRS-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0003",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.13
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PRS-0004_noqr.jpg",
+    "truth": "TNG-PRS-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0004",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.0
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PRS-0005_noqr.jpg",
+    "truth": "TNG-PRS-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0005",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.07
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-PRS-0006_noqr.jpg",
+    "truth": "TNG-PRS-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-PRS-0006",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.39
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0001_noqr.jpg",
+    "truth": "TNG-ROB-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0001",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.88
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0002_noqr.jpg",
+    "truth": "TNG-ROB-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0002",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.84
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0003_noqr.jpg",
+    "truth": "TNG-ROB-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0003",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.16
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0004_noqr.jpg",
+    "truth": "TNG-ROB-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0004",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.03
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0005_noqr.jpg",
+    "truth": "TNG-ROB-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0005",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.02
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0006_noqr.jpg",
+    "truth": "TNG-ROB-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0006",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.45
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0007_noqr.jpg",
+    "truth": "TNG-ROB-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0007",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.37
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0008_noqr.jpg",
+    "truth": "TNG-ROB-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0008",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.15
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0009_noqr.jpg",
+    "truth": "TNG-ROB-0009",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0009",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.03
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0010_noqr.jpg",
+    "truth": "TNG-ROB-0010",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0010",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.21
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0011_noqr.jpg",
+    "truth": "TNG-ROB-0011",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0011",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.05
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0012_noqr.jpg",
+    "truth": "TNG-ROB-0012",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0012",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.03
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0013_noqr.jpg",
+    "truth": "TNG-ROB-0013",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0013",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.32
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0014_noqr.jpg",
+    "truth": "TNG-ROB-0014",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0014",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.21
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0015_noqr.jpg",
+    "truth": "TNG-ROB-0015",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0015",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.23
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0016_noqr.jpg",
+    "truth": "TNG-ROB-0016",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0016",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.94
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0017_noqr.jpg",
+    "truth": "TNG-ROB-0017",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0017",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.38
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0018_noqr.jpg",
+    "truth": "TNG-ROB-0018",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0018",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.77
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0019_noqr.jpg",
+    "truth": "TNG-ROB-0019",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0019",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.98
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0020_noqr.jpg",
+    "truth": "TNG-ROB-0020",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0020",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.13
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0021_noqr.jpg",
+    "truth": "TNG-ROB-0021",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0021",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.19
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0022_noqr.jpg",
+    "truth": "TNG-ROB-0022",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0022",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.06
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0023_noqr.jpg",
+    "truth": "TNG-ROB-0023",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0023",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.09
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0024_noqr.jpg",
+    "truth": "TNG-ROB-0024",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0024",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.88
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0025_noqr.jpg",
+    "truth": "TNG-ROB-0025",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0025",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.44
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-ROB-0026_noqr.jpg",
+    "truth": "TNG-ROB-0026",
+    "outcome": "direct_ok",
+    "predicted": "TNG-ROB-0026",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.44
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0001_noqr.jpg",
+    "truth": "TNG-RPT-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0001",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.19
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0002_noqr.jpg",
+    "truth": "TNG-RPT-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0002",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.07
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0003_noqr.jpg",
+    "truth": "TNG-RPT-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0003",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.83
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0004_noqr.jpg",
+    "truth": "TNG-RPT-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0004",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.75
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0005_noqr.jpg",
+    "truth": "TNG-RPT-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0005",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.3
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0006_noqr.jpg",
+    "truth": "TNG-RPT-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0006",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.66
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0007_noqr.jpg",
+    "truth": "TNG-RPT-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0007",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.79
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-RPT-0008_noqr.jpg",
+    "truth": "TNG-RPT-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-RPT-0008",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.77
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0001_noqr.jpg",
+    "truth": "TNG-VIS-0001",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0001",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.9
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0002_noqr.jpg",
+    "truth": "TNG-VIS-0002",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0002",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.2
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0003_noqr.jpg",
+    "truth": "TNG-VIS-0003",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0003",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.83
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0004_noqr.jpg",
+    "truth": "TNG-VIS-0004",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0004",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 5.66
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0005_noqr.jpg",
+    "truth": "TNG-VIS-0005",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0005",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.85
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0006_noqr.jpg",
+    "truth": "TNG-VIS-0006",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0006",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.56
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0007_noqr.jpg",
+    "truth": "TNG-VIS-0007",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0007",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.64
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0008_noqr.jpg",
+    "truth": "TNG-VIS-0008",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0008",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.91
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0009_noqr.jpg",
+    "truth": "TNG-VIS-0009",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0009",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.91
+  },
+  {
+    "set": "Sans QR code, plaque lisible",
+    "file": "TNG-VIS-0010_noqr.jpg",
+    "truth": "TNG-VIS-0010",
+    "outcome": "direct_ok",
+    "predicted": "TNG-VIS-0010",
+    "method": "OCR plaque (ID + S/N)",
+    "confidence": 1.0,
+    "seconds": 4.31
+  },
+  {
+    "set": "Photographies de machines réelles",
+    "file": "TNG-PLC-0001__simatic-s7.jpg",
+    "truth": "TNG-PLC-0001",
+    "outcome": "fallback_listed",
+    "predicted": null,
+    "method": "Vision (CLIP, catégorie seulement)",
+    "confidence": 0.999881386756897,
+    "seconds": 17.62
+  }
+]

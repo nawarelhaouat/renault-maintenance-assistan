@@ -70,5 +70,5 @@ def risk_report(asset_tag: str) -> str:
         lines.append("**Facteurs qui augmentent le risque** : " + r["drivers"])
     late = int(r["days_since_pm"] - r["pm_days"])
     if late > 0:
-        lines.append(f"\n⚠️ Maintenance préventive en retard de {late} jours : à planifier en priorité.")
+        lines.append(f"\n**Attention** : maintenance préventive en retard de {late} jours, à planifier en priorité.")
     return "\n".join(lines)

@@ -9,7 +9,7 @@ from app.db import query
 from app.ml.predict import score_fleet
 
 st.set_page_config(page_title="Dashboard maintenance", page_icon="📊", layout="wide")
-st.title("📊 Dashboard maintenance prédictive")
+st.title("Dashboard maintenance prédictive")
 
 
 @st.cache_data(ttl=600)

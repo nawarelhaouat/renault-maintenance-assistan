@@ -11,6 +11,7 @@ services:
     volumes:
       - gmao_data:/var/lib/postgresql/data
       - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./db/auth_history.sql:/docker-entrypoint-initdb.d/02_auth_history.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U gmao -d gmao"]
       interval: 5s
@@ -28,21 +29,13 @@ services:
     image: ollama/ollama:latest
     container_name: gmao_ollama
     ports:
-      - "11435:11434"          # 11435 côté hôte : évite le conflit avec ton Ollama local
+      - "11435:11434"
     volumes:
       - ollama_data:/root/.ollama
     healthcheck:
       test: ["CMD", "ollama", "list"]
       interval: 10s
       retries: 12
-    # GPU NVIDIA (optionnel) :
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: all
-    #           capabilities: [gpu]
 
   ollama-pull:
     image: ollama/ollama:latest
@@ -60,13 +53,13 @@ services:
     container_name: gmao_api
     ports:
       - "8000:8000"
-    environment: &app_env
+    environment:
       DATABASE_URL: postgresql://gmao:gmao@db:5432/gmao
       QDRANT_URL: http://qdrant:6333
       OLLAMA_HOST: http://ollama:11434
-      API_KEY: ${API_KEY:-}
+      JWT_SECRET: ${JWT_SECRET:?Définis JWT_SECRET dans le fichier .env}
       WARMUP: "1"
-    volumes: &app_vol
+    volumes:
       - ./data:/app/data
       - ./models:/app/models
       - hf_cache:/root/.cache/huggingface
@@ -79,14 +72,11 @@ services:
       ollama:
         condition: service_healthy
 
-  ui:
-    image: gmao-app
-    container_name: gmao_ui
-    command: streamlit run frontend/streamlit_app.py --server.address 0.0.0.0 --server.port 8501
+  web:
+    build: ./web
+    container_name: gmao_web
     ports:
-      - "8501:8501"
-    environment: *app_env
-    volumes: *app_vol
+      - "8081:80"
     depends_on:
       - api
 

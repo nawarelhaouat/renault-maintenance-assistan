@@ -1,9 +1,0 @@
-{
-  "prevalence_test": 0.1927672955974843,
-  "auc_model": 0.6002010713212178,
-  "auc_baseline_pm_ratio": 0.5127823911345596,
-  "avg_precision_model": 0.24677640514660815,
-  "brier_model": 0.15964582562446594,
-  "brier_constant": 0.15585007434795972,
-  "precision_top10pct": 0.25471698113207547
-}
