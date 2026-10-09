@@ -3,12 +3,15 @@ import { useLocation, useNavigate, useOutletContext, useParams } from "react-rou
 import { api } from "../api";
 import Composer from "../components/Composer";
 import { IdentCard, Message, Typing } from "../components/Message";
+import { Activity, HelpCircle, History, Wrench } from "lucide-react";
 
 const SUGGESTIONS = [
   "Quelle est la dernière panne de cette machine ?",
   "Combien d'interventions cette machine a-t-elle eues ?",
   "Quel est le risque de panne de cette machine ?",
 ];
+
+const SUGGESTION_ICONS = [HelpCircle, History, Activity];
 
 export default function Assistant() {
   const { id } = useParams();
@@ -98,12 +101,14 @@ export default function Assistant() {
       <div className="chat">
         {empty ? (
           <div className="empty">
+            <span className="empty-icon"><Wrench size={22} /></span>
             <h1>Assistant de maintenance</h1>
-            <p>Sélectionne une machine ou envoie une photo, puis pose ta question en français ou en darija.</p>
+            <p>Posez un diagnostic, identifiez un code défaut ou interrogez la documentation technique de votre machine, en français ou en darija.</p>
             <div className="suggestions">
-              {SUGGESTIONS.map((s) => (
-                <button key={s} className="suggestion" onClick={() => send(s)}>{s}</button>
-              ))}
+              {SUGGESTIONS.map((s, i) => {
+                const Icon = SUGGESTION_ICONS[i];
+                return <button key={s} className="suggestion" onClick={() => send(s)}><Icon size={15} />{s}</button>;
+              })}
             </div>
           </div>
         ) : (

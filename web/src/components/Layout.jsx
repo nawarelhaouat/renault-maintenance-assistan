@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { LayoutDashboard, LogOut, MessageSquare, PanelLeft, SquarePen, Trash2, Wrench } from "lucide-react";
+import { LayoutDashboard, LogOut, MessageSquare, Moon, PanelLeft, SquarePen, Sun, Trash2, Wrench } from "lucide-react";
 import { DASH_ROLES } from "../App";
 import { api } from "../api";
 import { useAuth } from "../auth";
@@ -28,6 +28,7 @@ export default function Layout() {
   );
   const [conversations, setConversations] = useState([]);
   const [menu, setMenu] = useState(false);
+  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "light");
 
   const refresh = useCallback(() => api.conversations().then(setConversations).catch(() => {}), []);
   useEffect(() => {
@@ -40,6 +41,12 @@ export default function Layout() {
       return !c;
     });
   const closeOnMobile = () => window.innerWidth < 768 && setCollapsed(true);
+  const switchTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem("theme", next);
+    setTheme(next);
+  };
 
   const remove = async (e, id) => {
     e.preventDefault();
@@ -79,7 +86,7 @@ export default function Layout() {
         </nav>
 
         <div className="section-head">
-          <span>Discussions</span>
+          <span>DISCUSSIONS</span>
           <button className="icon-btn small" onClick={() => navigate("/", { state: { fresh: Date.now() } })}
                   aria-label="Nouvelle discussion" title="Nouvelle discussion">
             <SquarePen size={15} />
@@ -108,19 +115,27 @@ export default function Layout() {
               <button onClick={logout}><LogOut size={16} />Se déconnecter</button>
             </div>
           )}
-          <button className="user-btn" onClick={() => setMenu((o) => !o)}>
-            <span className="avatar">{initials}</span>
-            <span className="user-meta"><span>{name}</span><small>{ROLES[user.role]}</small></span>
-          </button>
+          <div className="foot-row">
+            <button className="user-btn" onClick={() => setMenu((o) => !o)}>
+              <span className="avatar">{initials}</span>
+              <span className="user-meta"><span>{name}</span><small>{ROLES[user.role]}</small></span>
+            </button>
+            <button className="icon-btn" onClick={switchTheme} aria-label="Changer de thème" title="Changer de thème">
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          </div>
         </div>
       </aside>
 
       <main className="main">
-        {collapsed && (
-          <button className="icon-btn floating" onClick={toggle} aria-label="Ouvrir le menu" title="Ouvrir le menu">
-            <PanelLeft size={18} />
-          </button>
-        )}
+        <header className="topbar">
+          {collapsed && (
+            <button className="icon-btn" onClick={toggle} aria-label="Ouvrir le menu" title="Ouvrir le menu">
+              <PanelLeft size={18} />
+            </button>
+          )}
+          <span className="topbar-title">{pathname.startsWith("/dashboard") ? "Dashboard" : "Assistant"}</span>
+        </header>
         <Outlet context={{ refresh }} />
       </main>
     </div>

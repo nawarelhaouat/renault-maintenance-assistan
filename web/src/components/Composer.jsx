@@ -30,7 +30,7 @@ function MachinePicker({ machines, value, onChange }) {
   return (
     <div className="picker" ref={ref}>
       <button className="chip-btn" onClick={() => setOpen((o) => !o)} aria-label="Choisir une machine">
-        <span>{value || "Aucune machine"}</span>
+        {value && <i className="dot" />}<span>{value || "Aucune machine"}</span>
         <ChevronDown size={15} />
       </button>
       {open && (
@@ -118,6 +118,7 @@ export default function Composer({ machines, machine, onMachine, onSend, onImage
           <ArrowUp size={18} />
         </button>
       </div>
+      <p className="composer-note">Les réponses proviennent des manuels indexés. Respectez toujours les consignes de sécurité.</p>      
       <input ref={upload} type="file" accept="image/*" hidden onChange={pickFile} />
       <input ref={capture} type="file" accept="image/*" capture="environment" hidden onChange={pickFile} />
       {camera && <CameraModal onClose={() => setCamera(false)} onCapture={(f) => { setCamera(false); onImage(f); }} />}
