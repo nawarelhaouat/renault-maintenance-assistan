@@ -8,11 +8,11 @@ Projet réalisé dans le cadre d'un stage de fin d'année à Renault Group Tange
 
 > **Données synthétiques.** Les manuels, la GMAO et les photographies de plaques de ce dépôt sont générés par des scripts. Aucun document ni aucune donnée de l'entreprise n'est inclus. Les résultats ci-dessous valident la chaîne de traitement, pas une performance industrielle.
 
-![Assistant](docs/img/assistant.png)
-![Dashboard](docs/img/dash1.png)
-![         ](docs/img/dash2.png)
-![         ](docs/img/dash3.png)
-![         ](docs/img/dash4.png)
+![Assistant](docs/img/assistant.PNG)
+![Dashboard](docs/img/dash1.PNG)
+![         ](docs/img/dash2.PNG)
+![         ](docs/img/dash3.PNG)
+![         ](docs/img/dash4.PNG)
 
 ## Fonctionnalités
 
