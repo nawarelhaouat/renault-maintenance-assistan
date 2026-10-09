@@ -1,6 +1,8 @@
+import json
 import time
+from pathlib import Path
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.auth import require_roles
 from app.db import query
@@ -9,16 +11,20 @@ router = APIRouter(prefix="/dashboard", dependencies=[Depends(require_roles("tec
 _cache: dict = {"t": 0.0, "v": None}
 
 KPI_SQL = """SELECT
-    COUNT(*) FILTER (WHERE wo_type = 'corrective' AND opened_at >= %(d)s::date - 90) AS c90,
-    COUNT(*) FILTER (WHERE wo_type = 'corrective' AND opened_at >= %(d)s::date - 180
-                       AND opened_at < %(d)s::date - 90) AS c_prev,
-    COALESCE(SUM(downtime_minutes) FILTER (WHERE opened_at >= %(d)s::date - 90), 0) AS dt90,
-    COALESCE(SUM(downtime_minutes) FILTER (WHERE opened_at >= %(d)s::date - 180
-                       AND opened_at < %(d)s::date - 90), 0) AS dt_prev
+    COUNT(*) FILTER (WHERE wo_type = 'corrective' AND opened_at >= %(d)s::date - %(n)s) AS cur,
+    COUNT(*) FILTER (WHERE wo_type = 'corrective' AND opened_at >= %(d)s::date - 2 * %(n)s
+                       AND opened_at < %(d)s::date - %(n)s) AS prev,
+    COALESCE(SUM(downtime_minutes) FILTER (WHERE opened_at >= %(d)s::date - %(n)s), 0) AS dt_cur,
+    COALESCE(SUM(downtime_minutes) FILTER (WHERE opened_at >= %(d)s::date - 2 * %(n)s
+                       AND opened_at < %(d)s::date - %(n)s), 0) AS dt_prev
     FROM work_orders"""
 
 FLEET_COLS = ["asset_tag", "model", "category", "workshop", "line_name", "level", "risk",
               "days_since_pm", "pm_days", "n_fail_90", "drivers"]
+
+_ROOT = Path(__file__).resolve()
+METRICS_CANDIDATES = [_ROOT.parents[2] / "models" / "metrics.json", _ROOT.parents[1] / "models" / "metrics.json",
+                      Path("models") / "metrics.json"]
 
 
 def _fleet():
@@ -34,12 +40,12 @@ def _fleet():
 
 
 @router.get("/summary")
-def summary():
+def summary(days: int = Query(90, ge=30, le=730)):
     df, as_of = _fleet()
-    k = query(KPI_SQL, {"d": as_of})[0]
-    return {"as_of": as_of, "machines": len(df),
-            "failures_90": int(k["c90"]), "failures_prev": int(k["c_prev"]),
-            "downtime_h_90": round(float(k["dt90"]) / 60, 1), "downtime_h_prev": round(float(k["dt_prev"]) / 60, 1),
+    k = query(KPI_SQL, {"d": as_of, "n": days})[0]
+    return {"as_of": as_of, "days": days, "machines": len(df),
+            "failures": int(k["cur"]), "failures_prev": int(k["prev"]),
+            "downtime_h": round(float(k["dt_cur"]) / 60, 1), "downtime_h_prev": round(float(k["dt_prev"]) / 60, 1),
             "high_risk": int((df["level"] == "Élevé").sum()), "pm_late": int((df["pm_ratio"] > 1).sum())}
 
 
@@ -51,10 +57,46 @@ def fleet():
 
 @router.get("/failures-monthly")
 def failures_monthly():
+    df, as_of = _fleet()
+    rows = query("""SELECT to_char(date_trunc('month', w.opened_at), 'YYYY-MM') AS month,
+                           m.asset_tag, COUNT(*) AS failures
+                    FROM work_orders w JOIN machines m ON m.machine_id = w.machine_id
+                    WHERE w.wo_type = 'corrective' AND w.opened_at >= %(d)s::date - 365
+                    GROUP BY 1, 2 ORDER BY 1""", {"d": as_of})
+    cat = dict(zip(df["asset_tag"], df["category"]))
+    months: dict[str, dict] = {}
+    for r in rows:
+        c = cat.get(r["asset_tag"], "Autre")
+        row = months.setdefault(r["month"], {"month": r["month"]})
+        row[c] = row.get(c, 0) + int(r["failures"])
+    return {"categories": sorted(set(cat.values())), "data": [months[k] for k in sorted(months)]}
+
+
+@router.get("/failure-codes")
+def failure_codes(days: int = Query(90, ge=30, le=730)):
     _, as_of = _fleet()
-    return query("""SELECT to_char(date_trunc('month', opened_at), 'YYYY-MM') AS month, COUNT(*) AS failures
-                    FROM work_orders WHERE wo_type = 'corrective' AND opened_at >= %(d)s::date - 365
-                    GROUP BY 1 ORDER BY 1""", {"d": as_of})
+    rows = query("""SELECT failure_code AS code, COUNT(*) AS failures,
+                           COALESCE(SUM(downtime_minutes), 0) AS downtime_min
+                    FROM work_orders
+                    WHERE wo_type = 'corrective' AND failure_code IS NOT NULL
+                      AND opened_at >= %(d)s::date - %(n)s
+                    GROUP BY 1 ORDER BY 2 DESC, 1""", {"d": as_of, "n": days})
+    total = sum(int(r["failures"]) for r in rows) or 1
+    run, out = 0, []
+    for r in rows:
+        run += int(r["failures"])
+        out.append({"code": r["code"], "failures": int(r["failures"]),
+                    "downtime_h": round(float(r["downtime_min"]) / 60, 1),
+                    "cumulative": round(100 * run / total, 1)})
+    return out
+
+
+@router.get("/model-metrics")
+def model_metrics():
+    for p in METRICS_CANDIDATES:
+        if p.exists():
+            return {"available": True, "metrics": json.loads(p.read_text(encoding="utf-8"))}
+    return {"available": False, "metrics": {}}
 
 
 @router.get("/machines/{asset_tag}")

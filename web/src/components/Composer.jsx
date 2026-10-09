@@ -54,7 +54,7 @@ function MachinePicker({ machines, value, onChange }) {
   );
 }
 
-export default function Composer({ machines, machine, onMachine, onSend, onImage, busy }) {
+export default function Composer({ machines, machine, onMachine, onSend, onImage, busy, draft }) {
   const [text, setText] = useState("");
   const [menu, setMenu] = useState(false);
   const [camera, setCamera] = useState(false);
@@ -70,6 +70,10 @@ export default function Composer({ machines, machine, onMachine, onSend, onImage
     el.style.height = "auto";
     el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
   }, [text]);
+
+  useEffect(() => {
+    if (draft) setText(draft);
+  }, [draft]);
 
   const submit = () => {
     if (!text.trim() || busy) return;

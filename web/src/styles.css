@@ -179,3 +179,38 @@ h1, h2 { margin: 0; font-weight: 600; }
 .pill.high { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
 .month-row { display: grid; grid-template-columns: 70px 1fr 32px; align-items: center; gap: 12px; padding: 5px 0; font-size: 14px; }
 .cands { max-height: 220px; overflow-y: auto; width: 100%; }
+
+.page { max-width: 1280px; }
+.section-title { font-size: 20px; font-weight: 600; margin: 0 0 10px; }
+.scroll-x.tall { max-height: 420px; overflow: auto; }
+.nowrap { white-space: nowrap; }
+.num { text-align: right; }
+.risk-cell { display: flex; align-items: center; gap: 10px; min-width: 170px; }
+.bar.red > i { background: #ff4b4b; }
+.charts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+@media (max-width: 900px) { .charts { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 6px; font-size: 14px; margin-bottom: 8px; }
+.field select { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: var(--bg-soft); }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+.metric-label { font-size: 13px; color: var(--muted); }
+.metric-value { font-size: 34px; font-weight: 500; line-height: 1.25; }
+.metric-hint { display: inline-block; font-size: 12px; border-radius: 999px; background: var(--bg-hover); padding: 2px 10px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.seg button { padding: 7px 14px; font-size: 14px; color: var(--muted); }
+.seg button:hover { background: var(--bg-hover); }
+.seg button.on { background: var(--accent); color: var(--accent-text); }
+.search-box { display: flex; align-items: center; gap: 6px; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; color: var(--muted); }
+.search-box input { border: 0; outline: 0; background: transparent; width: 170px; color: var(--text); }
+.filters { flex-wrap: wrap; align-items: center; }
+.table th.sortable { cursor: pointer; user-select: none; }
+.table th.sortable:hover { color: var(--text); }
+.th-inner { display: inline-flex; align-items: center; gap: 4px; }
+.table tr.sel td { background: var(--bg-soft); }
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 10px; }
+.card.mini { padding: 12px 14px; }
+.mini-value { font-size: 22px; font-weight: 600; }
+.drivers { margin: 4px 0 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip { display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font-size: 13px; background: var(--bg-soft); }
+.chip strong { font-weight: 600; }
+.spaced-top { margin-top: 14px; }

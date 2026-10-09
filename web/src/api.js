@@ -46,8 +46,10 @@ export const api = {
     form.append("file", file);
     return request("/identify", { method: "POST", form });
   },
-  summary: () => request("/dashboard/summary"),
+    summary: (days = 90) => request(`/dashboard/summary?days=${days}`),
   fleet: () => request("/dashboard/fleet"),
   monthly: () => request("/dashboard/failures-monthly"),
+  failureCodes: (days = 90) => request(`/dashboard/failure-codes?days=${days}`),
+  modelMetrics: () => request("/dashboard/model-metrics"),
   machineDetail: (tag) => request(`/dashboard/machines/${tag}`),
 };

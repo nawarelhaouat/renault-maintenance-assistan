@@ -12,7 +12,7 @@ const SUGGESTIONS = [
 
 export default function Assistant() {
   const { id } = useParams();
-  const { key } = useLocation();
+    const { key, state } = useLocation();
   const { refresh } = useOutletContext();
   const navigate = useNavigate();
   const [machines, setMachines] = useState([]);
@@ -35,7 +35,7 @@ export default function Assistant() {
     if (!id) {
       setConvId(null);
       setMessages([]);
-      setMachine(null);
+      setMachine(state?.machine ?? null);
       return;
     }
     if (created.current === Number(id)) {      // discussion tout juste créée : déjà à l'écran
@@ -120,7 +120,7 @@ export default function Assistant() {
       </div>
       {error && <div className="error banner">{error}</div>}
       <Composer machines={machines} machine={machine} onMachine={setMachine}
-                onSend={send} onImage={identify} busy={busy} />
+                onSend={send} onImage={identify} busy={busy} draft={!id ? state?.question : ""} />
     </div>
   );
 }
